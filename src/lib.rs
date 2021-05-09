@@ -356,6 +356,7 @@ pub trait ParseInput<const Day: u32> {
     fn parse_input(input: &str) -> Self::Parsed;
 }
 
+/// implement [`ParseEachInput`] for both parts of a day if [`ParseInput`] is implemented
 impl<T, const Day: u32> ParseEachInput<Day, Part1> for T
 where
     T: ParseInput<Day>,
@@ -366,6 +367,7 @@ where
     }
 }
 
+/// implement [`ParseEachInput`] for both parts of a day if [`ParseInput`] is implemented
 impl<T, const Day: u32> ParseEachInput<Day, Part2> for T
 where
     T: ParseInput<Day>,
